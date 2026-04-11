@@ -1,3 +1,6 @@
+English Version
+https://github.com/Ozk-Git/Knowledge_Vault_E
+
 # Knowledge Vault — 研究者のための AI 連携知識醸成システム
 
 このリポジトリは、AI エージェントを「共同研究者」として迎え入れ、あなたの思考を構造化するための知識管理システムです。
