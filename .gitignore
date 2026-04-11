@@ -1,0 +1,34 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# User data (Vault content)
+# Ignore all notes by default, but keep directory structure via .gitkeep
+Inbox/*
+!Inbox/.gitkeep
+Daily/*
+!Daily/.gitkeep
+Clippings/*
+!Clippings/.gitkeep
+Literature/*
+!Literature/.gitkeep
+Permanent/*
+!Permanent/.gitkeep
+References/**
+!References/
+!References/_index.md
+Papers/*
+!Papers/.gitkeep
+!Papers/AGENTS.md
+!Papers/CLAUDE.md
+!Papers/GEMINI.md
+
+# Drafts
+Papers/*/drafts/
+
+# Obsidian settings
+.obsidian/
+
+# Environment secrets
+.env
+.env.*
