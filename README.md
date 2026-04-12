@@ -60,7 +60,8 @@ cd リポジトリ名
 ```
 
 ### 2. AI エージェントの起動
-お好みの AI エージェント（Claude Code, Gemini CLI, Codex, または VS Code + Gemini Code Assist）をこのディレクトリ（Knowledge_Vault）で起動してください。
+お好みの AI エージェント（Claude Code, Gemini CLI, Codex）をこのディレクトリ（Knowledge_Vault）で起動してください。
+VS Code + Gemini Code Assist 拡張機能は動作しません。
 
 > **作者の環境について**: このシステムは **Obsidian + ACP プラグイン** をビューア・エディタとして使うことを前提に設計・運用しています。ただし、Markdown ファイルの読み書きさえできれば動作するため、AI エージェント CLI 単体でも、VS Code / Antigravity でも同様に利用できます。データ解析 → 論文執筆の流れでは、VS Code / Antigravity が便利だと思う人が多いかも。
 
