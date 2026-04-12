@@ -2,6 +2,9 @@
 .DS_Store
 Thumbs.db
 
+# VS Code workspace files (local environment specific)
+*.code-workspace
+
 # Obsidian settings
 .obsidian/
 
