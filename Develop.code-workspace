@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "Develop",
+			"path": "../../../../Develop"
+		},
+		{
+			"name": "Knowledge_Vault",
+			"path": "."
+		},
+		{
+			"name": "Knowledge_Vault_E",
+			"path": "../../../../Develop/Knowledge_Vault_E"
+		}
+	],
+	"settings": {}
+}
