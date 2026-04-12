@@ -12,16 +12,35 @@ Clippings/*
 !Clippings/.gitkeep
 Literature/*
 !Literature/.gitkeep
+!Literature/AGENTS.md
+!Literature/CLAUDE.md
+!Literature/GEMINI.md
 Permanent/*
 !Permanent/.gitkeep
+!Permanent/AGENTS.md
+!Permanent/CLAUDE.md
+!Permanent/GEMINI.md
 References/**
 !References/
 !References/_index.md
+!References/AGENTS.md
+!References/CLAUDE.md
+!References/GEMINI.md
 Papers/*
 !Papers/.gitkeep
 !Papers/AGENTS.md
 !Papers/CLAUDE.md
 !Papers/GEMINI.md
+!Papers/example-project/
+Papers/example-project/*
+!Papers/example-project/00_overview.md
+!Papers/example-project/01_claims.md
+!Papers/example-project/02_evidence.md
+!Papers/example-project/03_gaps.md
+!Papers/example-project/experiments/
+!Papers/example-project/protocols/
+!Papers/example-project/results/
+!Papers/example-project/scripts/
 
 # Drafts
 Papers/*/drafts/
