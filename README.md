@@ -67,7 +67,8 @@ cd リポジトリ名
 **選択肢：**
 
 - **ターミナル（推奨）**: Claude Code, Gemini CLI, Codex などの AI エージェント CLI を直接起動する方法です。システムの目的に最も沿った結果が得られます。
-- **VS Code + AI 拡張**: Gemini Code Assist（Agent モード）や拡張機能の Claude Code や Codex を利用する方法です。ターミナル CLI に近い体験が手軽に得られます。VS Code / Antigravity もビューアとして活用できます。
+- **VS Code + AI 拡張**: 拡張機能の Claude Code や Codex を利用する方法です。ターミナル CLI に近い体験が手軽に得られます。VS Code / Antigravity もビューアとして活用できます。
+  > ⚠️ **Gemini Code Assist（VS Code 拡張）は現時点では動作しません。** Agent モードのファイルアクセス制限により、セッション開始手順が完了できないことを確認しています。Gemini を使う場合は CLI 版をご利用ください。
 - **Obsidian + ACP プラグイン**: Obsidian 上から AI エージェントを呼び出す方法です。ノートのビジュアル編集と AI 操作を一画面で行えます。
   - ACP プラグイン: https://github.com/RAIT-09/obsidian-agent-client
 
@@ -263,7 +264,7 @@ Lint と同時に **Connect**（セレンディピティ探索）も実行され
 
 ### 4. エージェントの「得意分野」を使い分ける
 - **Claude Code**: 高い論理的推論が得意。論文の「執筆」や「複雑なロジックの整理」に最適です。
-- **Gemini CLI / Gemini Code Assist**: 圧倒的なコンテキスト（記憶容量）が武器。大量の PDF の一括処理や、Vault 全体を俯瞰した検索に強みを発揮します。
+- **Gemini CLI**: 圧倒的なコンテキスト（記憶容量）が武器。大量の PDF の一括処理や、Vault 全体を俯瞰した検索に強みを発揮します。（※VS Code 拡張版は非対応）
 - **Codex**: 汎用的な操作やスクリプト実行など、日常的なメンテナンスに。
 
 ### 5. 「#llm-draft」タグを外すことの意味
