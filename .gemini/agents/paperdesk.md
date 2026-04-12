@@ -1,6 +1,6 @@
 ---
 name: paperdesk
-description: Expert in deep paper analysis (Mode A: Reading), peer review simulation (Mode B: Review), and literature survey (Mode C: Survey). Specify a paper, PDF path, or research topic to start.
+description: "Expert in deep paper analysis (Mode A: Reading), peer review simulation (Mode B: Review), and literature survey (Mode C: Survey). Specify a paper, PDF path, or research topic to start."
 tools:
   - read_file
   - write_file
