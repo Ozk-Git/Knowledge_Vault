@@ -86,9 +86,9 @@ AIが叩き台を作り、人間が編集する。詳細は `Literature/AGENTS.m
 
 ソースのタイプに応じてプロンプトを使い分ける:
 - **論文 PDF**（`References/papers/` 配下）
-  → `templates/paperdesk.md` の**モード A（読解）**を適用する
+  → `templates/paperdesk-read.md` を適用する
 - **自分の論文の査読シミュレーション**
-  → `templates/paperdesk.md` の**モード B（査読）**を適用する
+  → `templates/paperdesk-review.md` を適用する
 - **書籍・その他**（`References/books/` 配下 / `Clippings/` / `Daily/`）
   → `Literature/AGENTS.md` の標準手順に従う
 
