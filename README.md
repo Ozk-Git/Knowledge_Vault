@@ -289,6 +289,7 @@ AI が生成したノートには必ず `#llm-draft` タグが付きます。
 -   **[obsidian-mind](https://github.com/breferrari/obsidian-mind)** by breferrari (MIT License): 思考パートナーとしての AI 連携の基礎。
 -   **[LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)** by Andrej Karpathy: AI による動的な知識管理という概念。
 -   **Zettelkasten Method**: 伝統的な知識連結手法。
+-   **[katmer-code](https://github.com/hkcanan/katmer-code)** by hkcanan (MIT License): ジャーナル選定・引用検証・研究ギャップ分析のエージェント設計を参考にしました。`submission.md`（Step 0）・`paperdesk-review.md`（Step 2, 3）・`paperdesk-survey.md`（Step 4b）の設計に活用しています。
 
 ライセンス: **MIT**
 
