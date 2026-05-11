@@ -3,70 +3,40 @@
 このVaultは、情報の集積（Capture）→ 知識への醸成（Knowledge）→ アウトプット（Output）
 を支援する研究者の外部知識システムです。
 
+root `AGENTS.md` は入口です。詳細手順は `rules/` と各ディレクトリの `AGENTS.md` に委譲します。
+
 ---
 
-## セッション開始
+## セッション
+
+### セッション開始
 
 **トリガー**: 「セッションを開始してください」
 
-1. `index.md` を読み、Vault全体の概要を把握する
-2. 実ファイル数や更新状況が重要な場合は、`index.md` を鵜呑みにせず実ディレクトリを確認する
-3. `log.md` の末尾5件を確認し、前回からの継続タスクを識別する
-4. `log.md` の記録が不足している可能性があるときは、必要に応じて実ファイルやGit履歴も参照する
-5. 以下の情報をもとに、今セッションで着手できる作業を優先度順に提案する（3件以内）:
-   - `Inbox/` `Clippings/` の未処理件数（件数も併記する）
-   - `#llm-draft` タグが2週間以上放置されているノート
-   - `Papers/*/03_gaps.md` の未解決事項（`状態: 未着手 / 対応中`）
-   - `log.md` の継続タスク
-6. Probe を実行し、結果をセッション開始報告に含める
-7. Vault の状況を報告する
+`rules/workflows.md#セッション開始` に従い、`index.md` / `log.md` / 未処理件数 / Probe を確認して、今セッションで着手できる作業を3件以内で提案する。
 
-## セッション終了
+### セッション終了
 
 **トリガー**: 「セッションを終了してください」
 
-1. `index.md` は派生サマリとして、必要な範囲で更新する
-2. `log.md` は補助的な操作記録として、主要な変更・判断を追記する
-   形式: `## [YYYY-MM-DD] {操作} | {内容}`
-3. 今セッションで生まれた新しい問いや半形成のアイデアがあれば `Inbox/` へのメモ追加を提案する
-4. 終了報告として、今セッションで行った作業の要点を3行以内でまとめる
+`rules/workflows.md#セッション終了` に従い、必要に応じて `index.md` と `log.md` を更新し、終了報告を3行以内でまとめる。
 
 ---
 
-## ディレクトリの役割
+## ディレクトリ運用
 
-### Clippings/
-Web記事・SNS保存など軽量な外部ソースの一時置き場。
-処理済みは `Clippings/Done/` へ移動する。
+Vault全体の構造と各ディレクトリの役割は `rules/architecture.md` を参照する。
 
-### References/
-論文PDF・書籍の永続保管庫。**削除しない。Done/ へ移動しない。**
-詳細は `References/AGENTS.md` に従う。
+サブディレクトリに `AGENTS.md` が存在する場合、そのディレクトリを操作する前に読む。
 
-### Daily/
-日々の気づき・実験所感・会議メモ。
-定期的に `Inbox/` または `Literature/` への昇華を促す。
-すでに1ノート1アイデアに近い内容なら、`Daily/` から直接 `Permanent/` に Promote してよい。
-
-### Inbox/
-思いつき・走り書きメモの投入口。
-処理済みは `Inbox/Done/` へ移動する。
-
-### Literature/
-`Clippings/` `References/` `Daily/` から生成した文献・ソースノート。
-AIが叩き台を作り、人間が編集する。詳細は `Literature/AGENTS.md` に従う。
-
-### Permanent/
-知識の中核。永久ノートと Wiki 統合ページを管理する。
-詳細は `Permanent/AGENTS.md` に従う。
-
-### Papers/
-論文ごとのワークスペース。`Papers/[paper-slug]/` の形で管理する。
-詳細は `Papers/AGENTS.md` に従う。
+- `Literature/` → `Literature/AGENTS.md`
+- `Permanent/` → `Permanent/AGENTS.md`
+- `Papers/` → `Papers/AGENTS.md`
+- `References/` → `References/AGENTS.md`
 
 ---
 
-## 原則
+## 最重要原則
 
 - **AIは叩き台を作る。最終判断と編集は人間が行う**
 - AIが生成したノートには必ず `#llm-draft` タグを付ける
@@ -79,64 +49,29 @@ AIが叩き台を作り、人間が編集する。詳細は `Literature/AGENTS.m
 
 ---
 
-## 操作定義
+## 操作
 
-### Ingest — ソース取り込み
-対象: `Clippings/` の未処理ファイル、`References/` 配下の論文PDF・書籍、`Daily/` のメモ
-
-ソースのタイプに応じてプロンプトを使い分ける:
-- **論文 PDF**（`References/papers/` 配下）
-  → `templates/paperdesk-read.md` を適用する
-- **自分の論文の査読シミュレーション**
-  → `templates/paperdesk-review.md` を適用する
-- **書籍・その他**（`References/books/` 配下 / `Clippings/` / `Daily/`）
-  → `Literature/AGENTS.md` の標準手順に従う
-
-### Promote — 永久ノート作成
-対象: `Inbox/` `Literature/` または直接昇華可能な `Daily/` ノート
-詳細は `Permanent/AGENTS.md` に従う。
-
-### Wiki-Update — 知識統合ページの更新
-対象: `Permanent/` 内の概念・エンティティ・比較ページ
-詳細は `Permanent/AGENTS.md` に従う。
-
-### Paper-Work — 論文執筆管理
-対象: `Papers/[paper-slug]/`
-詳細は `Papers/AGENTS.md` に従う。
-
-### Lint — Vault 健全性チェック
-定期実行または要求時:
-
-- 詳細チェックは `rules/lint.md` に従う
-- **AGENTS.md 肥大チェック**: root `AGENTS.md` が170行を超えている場合、セッション開始時に不要な詳細手順を `rules/workflows.md` へ分離することを提案する
-
-### Probe — 能動的問いかけ
-セッション開始時に自動実行する。
-
-- 最近 Ingest されたノートの中から、既存 Permanent ノートと矛盾・補完・拡張する関係を探し報告する
-- `状態: 確定` の Claim のうち、証拠が薄いものを指摘する
-- `#open-question` の中から、既存知識で答えられそうなものを提案する
-- 長期放置の Permanent ノートを1〜2件取り上げ、最近の知識との接続を問いかける
-
-### Connect — セレンディピティ探索
-要求時または Lint と同時に実行する。詳細は `rules/workflows.md` を参照する。
-
-### Remember — 議論の記憶保存
-**トリガー**: 「議論を記憶してください」
-詳細は `rules/workflows.md` を参照する。
+- Ingest — ソース取り込み: `rules/workflows.md#ingest`
+- Promote — 永久ノート作成: `Permanent/AGENTS.md`
+- Wiki-Update — 知識統合ページ更新: `Permanent/AGENTS.md`
+- Paper-Work — 論文執筆管理: `Papers/AGENTS.md`
+- PaperDesk — 論文精査: `rules/workflows.md#paperdesk`
+- Lint — Vault健全性チェック: `rules/lint.md`
+- Probe — 能動的問いかけ: `rules/workflows.md#probe`
+- Connect — セレンディピティ探索: `rules/workflows.md#connect`
+- Remember — 議論の記憶保存: `rules/workflows.md#remember`
 
 ---
 
-## ディレクトリ別の追加規約
+## PaperDesk 概要
 
-サブディレクトリに `AGENTS.md` が存在する場合、そのディレクトリを操作する前に読む。
+論文の検索・読解・査読・横断サーベイ・科学的根拠確認には PaperDesk を使う。
+詳細なモード選択と実行範囲は `rules/workflows.md#paperdesk` に従う。
 
-- `Literature/` → `Literature/AGENTS.md`
-- `Permanent/` → `Permanent/AGENTS.md`
-- `Papers/` → `Papers/AGENTS.md`
-- `References/` → `References/AGENTS.md`
-
----
+- Mode A / read: 他者の論文1本を読解・Vault統合する
+- Mode B / review: 自分の原稿を投稿前に批判的評価する
+- Mode C / survey: 複数論文を横断して調べる
+- Mode D / evidence-check: 科学的主張の支持状況を確認する
 
 ## システム改善
 
